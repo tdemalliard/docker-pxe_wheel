@@ -8,7 +8,8 @@ Config files are made to work with a host conected to 2 networks with 2 interfac
 * eth0 is the public network with internet. It get its IP from dhcp server.
 * eth1 is the private network with CoreOS nodes. It got its own static IP 172.16.1.1.
 If routing is needed :
-```
+
+```bash
 # eth1 is LAN
 # eth0 is WAN
 
