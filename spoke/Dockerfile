@@ -14,6 +14,6 @@ RUN             apt-get -q update && apt-get -qyV install \
 ENV             SPOKE_NAME pxe
 
 # tunnable variables
-ENV RELEASE beta
+ENV RELEASE alpha
 
 COPY            /entrypoint.sh /entrypoint.sh
