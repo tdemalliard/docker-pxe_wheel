@@ -3,6 +3,11 @@
 This is a Radial Wheel repository for running dnsmasq as PXE+DHCP server serving
 [Coreos][coreos] images.
 
+## default network
+Config files are made to work with a host conected to 2 networks with 2 interfaces :
+* eth0 is the public network with internet. It get its IP from dhcp server.
+* eth1 is the private network with CoreOS nodes. It got its one static IP 172.16.1.1.
+
 ## Setup
 * Add your public ssh-key to the file "hub/config/pxelinux.cfg/default" where it
   says `YOUR_SSH_PUBLIC_KEY_HERE`
