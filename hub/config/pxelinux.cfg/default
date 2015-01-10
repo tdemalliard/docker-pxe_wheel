@@ -1,6 +1,6 @@
 default coreos
 prompt 1
-timeout 15
+timeout 5
 
 display boot.msg
 
