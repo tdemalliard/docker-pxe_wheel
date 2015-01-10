@@ -6,7 +6,21 @@ This is a Radial Wheel repository for running dnsmasq as PXE+DHCP server serving
 ## default network
 Config files are made to work with a host conected to 2 networks with 2 interfaces :
 * eth0 is the public network with internet. It get its IP from dhcp server.
-* eth1 is the private network with CoreOS nodes. It got its one static IP 172.16.1.1.
+* eth1 is the private network with CoreOS nodes. It got its own static IP 172.16.1.1.
+If routing is needed :
+```bash
+# eth1 is LAN
+# eth0 is WAN
+
+# Allow established connections
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+# Masquerade.
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+# fowarding
+iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+# Allow outgoing connections from the LAN side.
+iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+```
 
 ## Setup
 * Add your public ssh-key to the file "hub/config/pxelinux.cfg/default" where it
