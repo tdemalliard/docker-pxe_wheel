@@ -7,4 +7,4 @@ display boot.msg
 label coreos
     menu default
     kernel coreos_production_pxe.vmlinuz
-    append initrd=coreos_production_pxe_image.cpio.gz rootfstype=btrfs vga=0x318 coreos.autologin sshkey="AAAAB3NzaC1yc2EAAAADAQABAAABAQDl38xoZjilX4XKiIG4mnFGll4WcXIk14Og/tI7u78lZ3i2gwM7hG6xntdjfgd7ZS1388GlpBIRzvQGNExqK8eajRYce6xt/29WvAyoYLBEiUjbCFtUzQjE0qKy3MlRlW5Pn7J89uQfxFzfEeHkKH7NBkNkQinKbBLpmPs9BAj3UiGzC/y7GXtxPTB6GUuVFMlaxLETQZLGur5vhD7ZwJImsp1vK4NNRcoQkpC8AUrfjYLDCnFNi86OmGgg6A2CauG+rUIqkDGCNcLg/Aejr0GHY8Yw74kZ4VQbweYuS0O6T4OVFwT/SnDHy8WxE+liJ2VNq9sT4rlWYk1AUPocNh6t"
+    append initrd=coreos_production_pxe_image.cpio.gz rootfstype=btrfs coreos.autologin  cloud-config-url=http://192.168.2.67/pxe-cloud-config.yml.php
